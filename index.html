@@ -1,13 +1,365 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Insert Business Name Here] | Professional Septic Pumping Australia</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'charcoal': '#1e293b',
+                        'hi-vis-orange': '#f97316',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .faq-item.active .faq-content { max-height: 500px; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="font-sans text-slate-900 bg-white pb-24 md:pb-0">
+
+    <!-- --- CONFIGURATION --- 
+         Change the business name and contact details below 
+    -->
+    <script>
+        const BUSINESS_NAME = "[Insert Business Name Here]";
+        const PHONE_NUMBER = "1800 000 000";
+        const WHATSAPP_LINK = "https://wa.me/61400000000";
+    </script>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="bg-hi-vis-orange p-1.5 rounded-lg">
+                    <i class="fas fa-truck text-white text-xl"></i>
+                </div>
+                <span class="font-bold text-xl tracking-tight text-slate-800">[Insert Business Name Here]</span>
+            </div>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#services" class="text-sm font-medium hover:text-hi-vis-orange transition-colors">Services</a>
+                <a href="#compliance" class="text-sm font-medium hover:text-hi-vis-orange transition-colors">Compliance</a>
+                <a href="#faq" class="text-sm font-medium hover:text-hi-vis-orange transition-colors">FAQ</a>
+                <a href="tel:1800000000" class="bg-hi-vis-orange text-white px-5 py-2 rounded-full font-bold flex items-center gap-2 hover:bg-orange-600 transition-all shadow-md">
+                    <i class="fas fa-phone"></i> 1800 000 000
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-charcoal text-white py-16 md:py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-r from-charcoal to-transparent z-10"></div>
+            <img src="https://images.unsplash.com/photo-1585914641050-fa9883c4e21c?auto=format&fit=crop&q=80&w=2000" alt="Septic Service" class="w-full h-full object-cover">
+        </div>
+        
+        <div class="relative z-20 max-w-7xl mx-auto px-4">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 bg-hi-vis-orange/10 border border-hi-vis-orange/30 text-hi-vis-orange px-3 py-1 rounded-full text-sm font-bold mb-6">
+                    <i class="fas fa-star"></i> 4.7/5 Star Rated
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                    Professional Septic Pumping & <span class="text-hi-vis-orange">AWTS Servicing</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed">
+                    Fast, reliable, and council-compliant liquid waste removal. Local family owned and operated, serving our community with pride.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="tel:1800000000" class="bg-hi-vis-orange hover:bg-orange-600 text-white text-center px-8 py-4 rounded-xl font-bold text-lg shadow-lg transition-all flex items-center justify-center gap-2">
+                        <i class="fas fa-phone"></i> CALL NOW
+                    </a>
+                    <a href="https://wa.me/61400000000" class="bg-white hover:bg-slate-100 text-slate-900 text-center px-8 py-4 rounded-xl font-bold text-lg shadow-lg transition-all flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-green-500"></i> WHATSAPP US
+                    </a>
+                </div>
+                
+                <div class="mt-12 flex flex-wrap gap-6">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-hi-vis-orange"></i>
+                        <span class="text-sm font-medium">Council Approved</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-hi-vis-orange"></i>
+                        <span class="text-sm font-medium">EPA Licensed</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-users text-hi-vis-orange"></i>
+                        <span class="text-sm font-medium">Local Family Owned</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Stats -->
+    <section class="py-12 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="text-3xl font-bold text-slate-900 mb-1">15+</div>
+                <div class="text-sm text-slate-500 font-medium uppercase tracking-wider">Years Exp.</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-slate-900 mb-1">24/7</div>
+                <div class="text-sm text-slate-500 font-medium uppercase tracking-wider">Emergency</div>
+            </div>
+            <div class="text-center border-x border-slate-200">
+                <div class="text-3xl font-bold text-slate-900 mb-1">100%</div>
+                <div class="text-sm text-slate-500 font-medium uppercase tracking-wider">Compliant</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-slate-900 mb-1">4.7★</div>
+                <div class="text-sm text-slate-500 font-medium uppercase tracking-wider">Google Rated</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Specialist Services</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto">Complete liquid waste management for residential and commercial properties.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-xl hover:border-hi-vis-orange/30 transition-all group">
+                <div class="w-14 h-14 bg-hi-vis-orange/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-hi-vis-orange transition-colors">
+                    <i class="fas fa-truck text-hi-vis-orange group-hover:text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Septic Tank Cleaning</h3>
+                <p class="text-slate-600 mb-6 leading-relaxed">Full <strong>Desludging</strong> and cleaning of septic tanks. We ensure your system is emptied safely and efficiently.</p>
+                <ul class="space-y-2 text-sm font-medium text-slate-700">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Full Desludging</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Sullage Removal</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Grease Trap Cleaning</li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-xl hover:border-hi-vis-orange/30 transition-all group">
+                <div class="w-14 h-14 bg-hi-vis-orange/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-hi-vis-orange transition-colors">
+                    <i class="fas fa-shield-halved text-hi-vis-orange group-hover:text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">AWTS Servicing</h3>
+                <p class="text-slate-600 mb-6 leading-relaxed">Specialist <strong>Aerated Wastewater Treatment System</strong> quarterly servicing. Accredited for all major brands.</p>
+                <ul class="space-y-2 text-sm font-medium text-slate-700">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Quarterly Maintenance</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Water Quality Testing</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Pump & Blower Checks</li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-xl hover:border-hi-vis-orange/30 transition-all group">
+                <div class="w-14 h-14 bg-hi-vis-orange/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-hi-vis-orange transition-colors">
+                    <i class="fas fa-clock text-hi-vis-orange group-hover:text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Emergency Pump-outs</h3>
+                <p class="text-slate-600 mb-6 leading-relaxed">Blocked drains? Overflows? Our <strong>Priority Emergency Dispatch</strong> team is ready 24/7 to help.</p>
+                <ul class="space-y-2 text-sm font-medium text-slate-700">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Rapid Response</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Blockage Clearance</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Overflow Prevention</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance -->
+    <section id="compliance" class="bg-charcoal text-white py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="flex-1">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Council & EPA Compliance Ready</h2>
+                    <p class="text-slate-300 text-lg mb-8 leading-relaxed">Operating a septic system in Australia comes with strict legal requirements. We handle the paperwork so you don't have to.</p>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="bg-hi-vis-orange/20 p-3 rounded-lg h-fit"><i class="fas fa-file-invoice text-hi-vis-orange text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-1">Instant Digital Reports</h4>
+                                <p class="text-slate-400">Mandatory Pump-out Receipts and Servicing Reports sent directly to your council and email.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="bg-hi-vis-orange/20 p-3 rounded-lg h-fit"><i class="fas fa-certificate text-hi-vis-orange text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-1">Fully Accredited</h4>
+                                <p class="text-slate-400">EPA licensed and council approved for all residential and commercial liquid waste removal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 w-full">
+                    <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 shadow-2xl">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span class="ml-auto text-xs font-mono text-slate-500 uppercase tracking-widest">Compliance Certificate</span>
+                        </div>
+                        <div class="space-y-4 font-mono text-sm text-slate-400">
+                            <div class="flex justify-between border-b border-slate-700 pb-2"><span>Service Type:</span><span class="text-hi-vis-orange">AWTS Quarterly</span></div>
+                            <div class="flex justify-between border-b border-slate-700 pb-2"><span>Council Status:</span><span class="text-green-500">COMPLIANT</span></div>
+                            <div class="flex justify-between border-b border-slate-700 pb-2"><span>EPA Tracking:</span><span class="text-slate-200">#NSW-8829-X</span></div>
+                            <div class="pt-4 text-xs italic">"Reports are automatically filed with your local council within 24 hours of service."</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 max-w-4xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Common Questions</h2>
+            <p class="text-slate-600">Everything you need to know about your septic system.</p>
+        </div>
+        
+        <div class="space-y-4">
+            <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-sm">
+                <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-lg">Do you provide council compliance reports?</span>
+                    <i class="fas fa-chevron-down faq-icon text-slate-400 transition-transform"></i>
+                </button>
+                <div class="faq-content px-6 text-slate-600 leading-relaxed">
+                    <div class="pb-6 pt-4 border-t border-slate-50">
+                        Yes, absolutely. We provide mandatory Pump-out Receipts and Servicing Reports required by local Australian councils. These are sent digitally to your inbox instantly after the job is completed.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-sm">
+                <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-lg">Can you service AWTS units?</span>
+                    <i class="fas fa-chevron-down faq-icon text-slate-400 transition-transform"></i>
+                </button>
+                <div class="faq-content px-6 text-slate-600 leading-relaxed">
+                    <div class="pb-6 pt-4 border-t border-slate-50">
+                        Yes, we are fully accredited for all major Aerated Wastewater Treatment Systems (AWTS). We provide the required quarterly servicing and maintenance reports to keep your system compliant and healthy.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-sm">
+                <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors">
+                    <span class="font-bold text-lg">How fast can you get here for a blockage?</span>
+                    <i class="fas fa-chevron-down faq-icon text-slate-400 transition-transform"></i>
+                </button>
+                <div class="faq-content px-6 text-slate-600 leading-relaxed">
+                    <div class="pb-6 pt-4 border-t border-slate-50">
+                        We offer priority emergency dispatch for blockages and overflows. In most cases, we can have a truck on-site within 2-4 hours to prevent environmental damage and restore your services.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-1">
+                        <div class="inline-flex items-center gap-2 text-hi-vis-orange font-bold mb-4 uppercase tracking-widest text-sm">
+                            <i class="fas fa-map-marker-alt"></i> Service Areas
+                        </div>
+                        <h2 class="text-3xl font-bold mb-6">Where We Operate</h2>
+                        <p class="text-slate-600 mb-8 leading-relaxed">We are proud to be a local family-owned business. Our fleet operates across major regions, providing fast response times to all local suburbs.</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center gap-2 text-slate-700 font-medium"><div class="w-1.5 h-1.5 rounded-full bg-hi-vis-orange"></div>Penrith</div>
+                            <div class="flex items-center gap-2 text-slate-700 font-medium"><div class="w-1.5 h-1.5 rounded-full bg-hi-vis-orange"></div>Blue Mountains</div>
+                            <div class="flex items-center gap-2 text-slate-700 font-medium"><div class="w-1.5 h-1.5 rounded-full bg-hi-vis-orange"></div>Hawkesbury</div>
+                            <div class="flex items-center gap-2 text-slate-700 font-medium"><div class="w-1.5 h-1.5 rounded-full bg-hi-vis-orange"></div>Wollondilly</div>
+                            <div class="flex items-center gap-2 text-slate-700 font-medium"><div class="w-1.5 h-1.5 rounded-full bg-hi-vis-orange"></div>Central Coast</div>
+                            <div class="flex items-center gap-2 text-slate-700 font-medium"><div class="w-1.5 h-1.5 rounded-full bg-hi-vis-orange"></div>Hunter Valley</div>
+                        </div>
+                    </div>
+                    <div class="flex-1 w-full h-64 bg-slate-200 rounded-2xl relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&q=80&w=1000" alt="Fleet" class="w-full h-full object-cover opacity-60 grayscale">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-white p-4 rounded-full shadow-2xl">
+                                <i class="fas fa-map-marker-alt text-hi-vis-orange text-3xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 text-center md:text-left">
+            <div class="grid md:grid-cols-4 gap-12 mb-12 border-b border-slate-800 pb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center justify-center md:justify-start gap-2 mb-6">
+                        <div class="bg-hi-vis-orange p-1.5 rounded-lg"><i class="fas fa-truck text-white"></i></div>
+                        <span class="font-bold text-2xl tracking-tight">[Insert Business Name Here]</span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm leading-relaxed mx-auto md:mx-0">Australia's trusted name in liquid waste management. Local, reliable, and 100% council compliant.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="#services" class="hover:text-hi-vis-orange transition-colors">Services</a></li>
+                        <li><a href="#compliance" class="hover:text-hi-vis-orange transition-colors">Compliance</a></li>
+                        <li><a href="#faq" class="hover:text-hi-vis-orange transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Contact</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><i class="fas fa-phone text-hi-vis-orange mr-2"></i> 1800 000 000</li>
+                        <li><i class="fas fa-clock text-hi-vis-orange mr-2"></i> Available 24/7</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-sm text-slate-500">© 2026 [Insert Business Name Here]. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile Footer -->
+    <div class="fixed bottom-0 left-0 right-0 z-[100] bg-white border-t border-slate-200 p-3 md:hidden flex gap-3 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+        <a href="tel:1800000000" class="flex-1 bg-hi-vis-orange text-white py-4 rounded-xl font-black text-center flex items-center justify-center gap-2 shadow-lg">
+            <i class="fas fa-phone"></i> CALL NOW
+        </a>
+        <a href="https://wa.me/61400000000" class="flex-1 bg-charcoal text-white py-4 rounded-xl font-black text-center flex items-center justify-center gap-2 shadow-lg">
+            <i class="fab fa-whatsapp text-green-500"></i> WHATSAPP
+        </a>
+    </div>
+
+    <script>
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all other items
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
